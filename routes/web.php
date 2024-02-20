@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Posts\Show;
+use App\Livewire\Posts\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/posts', Index::class);
+Route::get('/post/{post}', Show::class);
