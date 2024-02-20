@@ -28,8 +28,8 @@ class Index extends Component
     {
         $posts = $this->query
             ? Post::query()
-                ->where('title', 'LIKE', "%{$this->query}%")
-                ->orWhere('content', 'LIKE', "%{$this->query}%")
+                ->where('title', 'LIKE', "{$this->query}%")
+                ->orWhere('content', 'LIKE', "{$this->query}%")
             : Post::query();
 
         return view('livewire.posts.index')
